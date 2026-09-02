@@ -2,99 +2,190 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Reta2</title>
 
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;
- min-height:100vh;
- font-family:system-ui,-apple-system,sans-serif;
- color:white;
- background:linear-gradient(150deg,#101020,#271343);
+  margin:0;
+  min-height:100vh;
+  font-family:system-ui,-apple-system,sans-serif;
+  color:white;
+  background:linear-gradient(150deg,#101020,#271340);
 }
-.app{max-width:700px;margin:auto;padding:30px 20px 70px}
-.logo{text-align:center;font-size:58px;font-weight:900;line-height:1}
+button{font:inherit}
+.app{
+  max-width:700px;
+  margin:auto;
+  padding:30px 18px 70px;
+}
+.logo{
+  text-align:center;
+  font-size:58px;
+  font-weight:900;
+  line-height:1;
+}
 .logo b{color:#ffd23f}
-.slogan{text-align:center;color:#ccc;font-size:22px;margin:8px 0 30px}
-
-.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:30px}
+.slogan{
+  text-align:center;
+  color:#ccc;
+  font-size:20px;
+  margin:8px 0 28px;
+}
+.stats{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:24px;
+}
 .pill{
- background:#ffffff10;
- border:1px solid #ffffff20;
- border-radius:22px;
- padding:14px 18px;
- font-weight:800;
- font-size:18px
+  background:#ffffff0d;
+  border:1px solid #ffffff1f;
+  border-radius:18px;
+  padding:12px 15px;
+  font-weight:800;
+  font-size:16px;
 }
-
 .card{
- background:#ffffff0c;
- border:1px solid #ffffff18;
- border-radius:32px;
- padding:28px;
- margin-bottom:25px;
- box-shadow:0 20px 50px #0002
+  background:#ffffff0d;
+  border:1px solid #ffffff1c;
+  border-radius:30px;
+  padding:25px 20px;
+  margin-bottom:22px;
+  box-shadow:0 15px 35px #0002;
 }
-h2{font-size:30px;margin:0 0 15px}
-.sub{color:#c8c5d0;font-size:18px}
-
-.mainbtn{
- width:100%;
- border:0;
- border-radius:25px;
- padding:22px 12px;
- background:#ffd23f;
- color:#171326;
- font-size:21px;
- font-weight:900;
- margin-top:15px
+h2{
+  margin:0 0 18px;
+  font-size:29px;
 }
-
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.cat,.answer{
- border:0;
- background:white;
- color:#171326;
- border-radius:25px;
- padding:25px 8px;
- font-size:19px;
- font-weight:850
+.daily{
+  background:linear-gradient(135deg,#ffffff0c,#ffcf3d12);
 }
-.cat span{display:block;font-size:32px;margin-bottom:8px}
-
-.hidden{display:none}
-
-.gamehead{display:flex;justify-content:space-between;align-items:center}
-.progress{
- height:10px;background:#ffffff12;border-radius:10px;
- margin:25px 0;overflow:hidden
+.daily p{
+  color:#ccc;
+  font-size:17px;
 }
-.bar{height:100%;background:#ffd23f;width:20%;transition:.3s}
+.primary{
+  width:100%;
+  border:0;
+  border-radius:20px;
+  background:#ffd23f;
+  color:#181526;
+  padding:18px;
+  font-size:18px;
+  font-weight:900;
+}
+.categories{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.cat{
+  border:0;
+  border-radius:22px;
+  min-height:130px;
+  background:#fff;
+  color:#181526;
+  font-size:18px;
+  font-weight:900;
+  padding:15px;
+}
+.cat span{
+  display:block;
+  font-size:38px;
+  margin-bottom:8px;
+}
+.best{text-align:center}
+.best strong{
+  display:block;
+  color:#ffd23f;
+  font-size:70px;
+  line-height:1;
+}
+.best small{
+  color:#ccc;
+  font-size:18px;
+}
+.hidden{display:none!important}
 
-.question{text-align:center;font-size:31px;font-weight:900;margin:35px 0}
-.answers{display:grid;gap:14px}
-.answer{width:100%;padding:20px}
-.answer:active{transform:scale(.98)}
-
-.correct{background:#52df8b!important}
-.wrong{background:#ff6969!important}
-
-.record{text-align:center}
-.bigscore{font-size:65px;font-weight:900;color:#ffd23f}
-
+.gameTop{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-bottom:18px;
+}
+.gameTop .pill{
+  text-align:center;
+  padding:10px 5px;
+}
+.timer{
+  font-size:34px;
+  text-align:center;
+  font-weight:900;
+  color:#ffd23f;
+  margin:8px 0 12px;
+}
+.bar{
+  height:8px;
+  background:#ffffff12;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:25px;
+}
+.bar div{
+  height:100%;
+  width:100%;
+  background:#ffd23f;
+  transition:width 1s linear;
+}
+.question{
+  text-align:center;
+  font-size:30px;
+  font-weight:900;
+  margin:25px 0;
+}
+.answers{
+  display:grid;
+  gap:12px;
+}
+.answer{
+  border:0;
+  background:white;
+  color:#181526;
+  border-radius:20px;
+  padding:18px;
+  font-size:21px;
+  font-weight:900;
+}
+.answer.correct{background:#56d889;color:#102519}
+.answer.wrong{background:#ff6868;color:white}
+.feedback{
+  min-height:30px;
+  text-align:center;
+  font-weight:900;
+  font-size:18px;
+  margin-top:15px;
+}
 .result{text-align:center}
-.result .emoji{font-size:70px}
-.result h2{font-size:38px}
-.resultscore{font-size:55px;font-weight:900;color:#ffd23f}
-
-footer{text-align:center;color:#817b91;margin-top:35px}
-
-@media(max-width:420px){
- .logo{font-size:48px}
- .card{padding:22px}
- .question{font-size:27px}
+.result .big{
+  font-size:76px;
+  color:#ffd23f;
+  font-weight:900;
+  line-height:1;
+}
+.result p{
+  color:#ccc;
+  font-size:18px;
+}
+.share{
+  margin-top:12px;
+  background:#fff;
+}
+.footer{
+  text-align:center;
+  color:#ffffff55;
+  margin-top:35px;
 }
 </style>
 </head>
@@ -102,176 +193,315 @@ footer{text-align:center;color:#817b91;margin-top:35px}
 <body>
 <div class="app">
 
-<div class="logo">RETA<b>2</b></div>
-<div class="slogan">¿Hasta dónde podés llegar?</div>
+  <div class="logo">RETA<b>2</b></div>
+  <div class="slogan">¿Hasta dónde podés llegar?</div>
 
-<div class="top">
- <div class="pill">🏆 Récord: <span id="recordTop">0</span></div>
- <div class="pill">⭐ <span id="totalTop">0</span> pts</div>
-</div>
-
-<section id="home">
-
- <div class="card">
-  <h2>🔥 Reto del día</h2>
-  <p class="sub">5 preguntas. Una oportunidad para superar tu marca.</p>
-  <button class="mainbtn" onclick="startGame('Reto del día')">
-   JUGAR RETO DEL DÍA
-  </button>
- </div>
-
- <div class="card">
-  <h2>🎯 Elegí tu desafío</h2>
-  <div class="grid">
-   <button class="cat" onclick="startGame('Mente')"><span>🧠</span>Mente</button>
-   <button class="cat" onclick="startGame('Divertidos')"><span>😂</span>Divertidos</button>
-   <button class="cat" onclick="startGame('Rápidos')"><span>⚡</span>Rápidos</button>
-   <button class="cat" onclick="startGame('Difíciles')"><span>🔥</span>Difíciles</button>
+  <div class="stats">
+    <div class="pill">🏆 Récord: <span id="recordTop">0</span></div>
+    <div class="pill">⭐ <span id="pointsTop">0</span> pts</div>
   </div>
- </div>
 
- <div class="card record">
-  <h2>🏆 Tu mejor marca</h2>
-  <div class="bigscore" id="recordBig">0</div>
-  <div class="sub">puntos</div>
- </div>
+  <section id="home">
+    <div class="card daily">
+      <h2>🔥 Reto del día</h2>
+      <p>Superá 10 preguntas antes de quedarte sin vidas.</p>
+      <button class="primary" onclick="startGame('Reto del día')">
+        JUGAR RETO DEL DÍA
+      </button>
+    </div>
 
-</section>
+    <div class="card">
+      <h2>🎯 Elegí tu desafío</h2>
+      <div class="categories">
+        <button class="cat" onclick="startGame('Mente')">
+          <span>🧠</span>Mente
+        </button>
+        <button class="cat" onclick="startGame('Divertidos')">
+          <span>😂</span>Divertidos
+        </button>
+        <button class="cat" onclick="startGame('Rápidos')">
+          <span>⚡</span>Rápidos
+        </button>
+        <button class="cat" onclick="startGame('Difíciles')">
+          <span>🔥</span>Difíciles
+        </button>
+      </div>
+    </div>
 
-<section id="game" class="card hidden">
+    <div class="card best">
+      <h2>🏆 Tu mejor marca</h2>
+      <strong id="best">0</strong>
+      <small>puntos</small>
+    </div>
+  </section>
 
- <div class="gamehead">
-  <div class="pill" id="counter">1/5</div>
-  <div class="pill"><span id="score">0</span> pts</div>
- </div>
+  <section id="game" class="card hidden">
+    <div class="gameTop">
+      <div class="pill">❤️ <span id="lives">3</span></div>
+      <div class="pill">🔥 <span id="streak">0</span></div>
+      <div class="pill">⭐ <span id="score">0</span></div>
+    </div>
 
- <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="timer">⏱️ <span id="time">15</span>s</div>
+    <div class="bar"><div id="timeBar"></div></div>
 
- <div class="question" id="question"></div>
- <div class="answers" id="answers"></div>
+    <div class="pill" style="display:inline-block">
+      <span id="counter">1/10</span>
+    </div>
 
-</section>
+    <div class="question" id="question"></div>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback"></div>
+  </section>
 
-<section id="result" class="card result hidden">
- <div class="emoji" id="resultEmoji">🏆</div>
- <h2 id="resultTitle">¡Terminaste!</h2>
- <p class="sub">Tu puntaje fue</p>
- <div class="resultscore"><span id="finalScore">0</span> pts</div>
- <button class="mainbtn" onclick="goHome()">VOLVER A JUGAR</button>
-</section>
+  <section id="result" class="card result hidden">
+    <h2 id="resultTitle">🏁 ¡Reto terminado!</h2>
+    <p>Tu puntuación</p>
+    <div class="big" id="finalScore">0</div>
+    <p id="resultMessage"></p>
 
-<footer>Reta2 · Prototipo V3</footer>
+    <button class="primary" onclick="goHome()">VOLVER A JUGAR</button>
+    <button class="primary share" onclick="shareResult()">📤 COMPARTIR RESULTADO</button>
+  </section>
 
+  <div class="footer">Reta2 · Prototipo V4</div>
 </div>
 
 <script>
-const questions=[
- {q:"¿Cuánto es 7 × 8?",a:["54","56","64","48"],ok:"56"},
- {q:"¿Cuánto es 12 × 6?",a:["62","72","82","68"],ok:"72"},
- {q:"¿Qué planeta es conocido como el planeta rojo?",a:["Venus","Marte","Júpiter","Mercurio"],ok:"Marte"},
- {q:"¿Cuántos lados tiene un hexágono?",a:["5","6","7","8"],ok:"6"},
- {q:"¿Cuál es la capital de Argentina?",a:["Córdoba","Rosario","Mendoza","Buenos Aires"],ok:"Buenos Aires"},
- {q:"¿Cuánto es 15 + 27?",a:["32","42","52","38"],ok:"42"},
- {q:"¿Qué animal es el más grande del mundo?",a:["Elefante","Ballena azul","Jirafa","Tiburón"],ok:"Ballena azul"},
- {q:"¿Cuántos minutos tiene una hora?",a:["50","60","70","100"],ok:"60"},
- {q:"¿Cuánto es 9 × 9?",a:["72","81","89","99"],ok:"81"},
- {q:"¿Qué océano es el más grande?",a:["Atlántico","Índico","Pacífico","Ártico"],ok:"Pacífico"}
-];
+const questions = {
+  Mente:[
+    ["¿Cuánto es 12 × 6?",["62","72","82","68"],"72"],
+    ["¿Cuánto es 9 × 8?",["81","72","64","69"],"72"],
+    ["¿Qué número sigue? 2, 4, 8, 16...",["20","24","32","30"],"32"],
+    ["¿Cuánto es 144 ÷ 12?",["10","11","12","14"],"12"],
+    ["Si tenés 3 docenas, ¿cuántos hay?",["24","30","36","42"],"36"]
+  ],
+  Divertidos:[
+    ["¿Qué pesa más?",["1 kg de hierro","1 kg de algodón","El hierro","Depende"],"1 kg de hierro"],
+    ["¿Qué animal dice 'miau'?",["Perro","Gato","Vaca","Pato"],"Gato"],
+    ["¿Cuál tiene agujas pero no cose?",["Reloj","Mesa","Vaso","Zapato"],"Reloj"],
+    ["¿Qué mes tiene 28 días?",["Febrero","Todos","Enero","Ninguno"],"Todos"],
+    ["¿Qué sube pero nunca baja?",["La edad","La lluvia","Un ascensor","El sol"],"La edad"]
+  ],
+  Rápidos:[
+    ["5 + 7 = ?",["10","11","12","13"],"12"],
+    ["10 × 3 = ?",["20","30","40","33"],"30"],
+    ["100 - 25 = ?",["65","70","75","85"],"75"],
+    ["8 + 9 = ?",["16","17","18","19"],"17"],
+    ["6 × 7 = ?",["36","40","42","48"],"42"]
+  ],
+  Difíciles:[
+    ["15 × 12 = ?",["160","170","180","190"],"180"],
+    ["225 ÷ 15 = ?",["10","12","15","20"],"15"],
+    ["17 × 6 = ?",["92","102","112","96"],"102"],
+    ["¿Raíz cuadrada de 169?",["11","12","13","14"],"13"],
+    ["25 × 16 = ?",["350","375","400","425"],"400"]
+  ]
+};
 
-let round=[];
-let current=0;
 let score=0;
+let lives=3;
+let streak=0;
+let current=0;
+let gameQuestions=[];
+let timer;
+let timeLeft=15;
+let locked=false;
+let category="";
 
 let record=Number(localStorage.getItem("reta2Record")||0);
+document.getElementById("best").textContent=record;
 document.getElementById("recordTop").textContent=record;
-document.getElementById("recordBig").textContent=record;
 
-function startGame(category){
- score=0;
- current=0;
- round=[...questions].sort(()=>Math.random()-.5).slice(0,5);
+function shuffle(arr){
+  return [...arr].sort(()=>Math.random()-.5);
+}
 
- document.getElementById("home").classList.add("hidden");
- document.getElementById("result").classList.add("hidden");
- document.getElementById("game").classList.remove("hidden");
+function startGame(cat){
+  category=cat;
+  score=0;
+  lives=3;
+  streak=0;
+  current=0;
 
- showQuestion();
- window.scrollTo(0,0);
+  let pool;
+  if(cat==="Reto del día"){
+    pool=[
+      ...questions.Mente,
+      ...questions.Divertidos,
+      ...questions.Rápidos,
+      ...questions.Difíciles
+    ];
+  }else{
+    pool=questions[cat];
+  }
+
+  gameQuestions=shuffle(pool);
+
+  while(gameQuestions.length<10){
+    gameQuestions=[...gameQuestions,...shuffle(pool)];
+  }
+
+  gameQuestions=gameQuestions.slice(0,10);
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("game").classList.remove("hidden");
+
+  updateStats();
+  showQuestion();
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function showQuestion(){
- const item=round[current];
+  if(current>=gameQuestions.length || lives<=0){
+    endGame();
+    return;
+  }
 
- document.getElementById("counter").textContent=(current+1)+"/5";
- document.getElementById("score").textContent=score;
- document.getElementById("totalTop").textContent=score;
- document.getElementById("bar").style.width=((current+1)*20)+"%";
- document.getElementById("question").textContent=item.q;
+  locked=false;
+  clearInterval(timer);
+  timeLeft=15;
 
- const box=document.getElementById("answers");
- box.innerHTML="";
+  const q=gameQuestions[current];
 
- item.a.forEach(option=>{
-  const button=document.createElement("button");
-  button.className="answer";
-  button.textContent=option;
-  button.onclick=()=>answer(button,option,item.ok);
-  box.appendChild(button);
- });
-}
+  document.getElementById("counter").textContent=(current+1)+"/10";
+  document.getElementById("question").textContent=q[0];
+  document.getElementById("feedback").textContent="";
+  document.getElementById("time").textContent=timeLeft;
+  document.getElementById("timeBar").style.width="100%";
 
-function answer(button,selected,correct){
- const buttons=document.querySelectorAll(".answer");
- buttons.forEach(b=>b.disabled=true);
+  const answers=document.getElementById("answers");
+  answers.innerHTML="";
 
- if(selected===correct){
-  score+=10;
-  button.classList.add("correct");
- }else{
-  button.classList.add("wrong");
-  buttons.forEach(b=>{
-   if(b.textContent===correct)b.classList.add("correct");
+  shuffle(q[1]).forEach(option=>{
+    const btn=document.createElement("button");
+    btn.className="answer";
+    btn.textContent=option;
+    btn.onclick=()=>chooseAnswer(btn,option,q[2]);
+    answers.appendChild(btn);
   });
- }
 
- document.getElementById("score").textContent=score;
- document.getElementById("totalTop").textContent=score;
+  timer=setInterval(()=>{
+    timeLeft--;
+    document.getElementById("time").textContent=timeLeft;
+    document.getElementById("timeBar").style.width=(timeLeft/15*100)+"%";
 
- setTimeout(()=>{
-  current++;
-  if(current<5) showQuestion();
-  else finishGame();
- },700);
+    if(timeLeft<=0){
+      clearInterval(timer);
+      timeout();
+    }
+  },1000);
 }
 
-function finishGame(){
- document.getElementById("game").classList.add("hidden");
- document.getElementById("result").classList.remove("hidden");
- document.getElementById("finalScore").textContent=score;
+function chooseAnswer(button,selected,correct){
+  if(locked)return;
+  locked=true;
+  clearInterval(timer);
 
- if(score>record){
-  record=score;
-  localStorage.setItem("reta2Record",record);
+  if(selected===correct){
+    streak++;
+    const bonus=Math.min(streak*2,10);
+    score+=10+bonus+timeLeft;
+    button.classList.add("correct");
+    document.getElementById("feedback").textContent="🔥 ¡Correcto! +"+(10+bonus+timeLeft);
+  }else{
+    lives--;
+    streak=0;
+    button.classList.add("wrong");
+    document.getElementById("feedback").textContent="❤️ Perdiste una vida";
+
+    [...document.querySelectorAll(".answer")].forEach(b=>{
+      if(b.textContent===correct)b.classList.add("correct");
+    });
+  }
+
+  updateStats();
+
+  setTimeout(()=>{
+    current++;
+    showQuestion();
+  },900);
+}
+
+function timeout(){
+  if(locked)return;
+  locked=true;
+  lives--;
+  streak=0;
+
+  document.getElementById("feedback").textContent="⏱️ ¡Se terminó el tiempo!";
+  updateStats();
+
+  setTimeout(()=>{
+    current++;
+    showQuestion();
+  },900);
+}
+
+function updateStats(){
+  document.getElementById("lives").textContent=lives;
+  document.getElementById("streak").textContent=streak;
+  document.getElementById("score").textContent=score;
+  document.getElementById("pointsTop").textContent=score;
+}
+
+function endGame(){
+  clearInterval(timer);
+
+  document.getElementById("game").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+
+  document.getElementById("finalScore").textContent=score;
+
+  let message="¡Buen intento! Volvé por una marca mejor 💪";
+
+  if(score>=100) message="🔥 ¡Tremenda partida!";
+  if(score>=180) message="🏆 ¡Sos una máquina!";
+  if(score>=250) message="👑 ¡Nivel legendario!";
+
+  if(score>record){
+    record=score;
+    localStorage.setItem("reta2Record",record);
+    message="🎉 ¡NUEVO RÉCORD! "+record+" puntos";
+  }
+
+  document.getElementById("resultMessage").textContent=message;
+  document.getElementById("best").textContent=record;
   document.getElementById("recordTop").textContent=record;
-  document.getElementById("recordBig").textContent=record;
-  document.getElementById("resultEmoji").textContent="🏆";
-  document.getElementById("resultTitle").textContent="¡NUEVO RÉCORD!";
- }else{
-  document.getElementById("resultEmoji").textContent=score>=40?"🔥":"🎯";
-  document.getElementById("resultTitle").textContent=
-   score>=40?"¡Excelente partida!":"¡Buen intento!";
- }
 
- window.scrollTo(0,0);
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function goHome(){
- document.getElementById("result").classList.add("hidden");
- document.getElementById("home").classList.remove("hidden");
- document.getElementById("totalTop").textContent="0";
- window.scrollTo(0,0);
+  clearInterval(timer);
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("game").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
+  document.getElementById("pointsTop").textContent="0";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+async function shareResult(){
+  const text="🔥 Hice "+score+" puntos en Reta2. ¿Podés superarme?";
+
+  if(navigator.share){
+    try{
+      await navigator.share({
+        title:"Reta2",
+        text:text,
+        url:location.href
+      });
+    }catch(e){}
+  }else{
+    try{
+      await navigator.clipboard.writeText(text+" "+location.href);
+      alert("Resultado copiado 📋");
+    }catch(e){
+      alert(text);
+    }
+  }
 }
 </script>
-
 </body>
 </html>
