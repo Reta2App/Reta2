@@ -264,7 +264,7 @@ h2{
     <button class="primary share" onclick="shareResult()">📤 COMPARTIR RESULTADO</button>
   </section>
 
-  <div class="footer">Reta2 · Prototipo V5</div>
+  <div class="footer">Reta2 · Prototipo V6</div>
 </div>
 
 <script>
@@ -361,7 +361,7 @@ const questions = {
     ["900 ÷ 30 = ?",["20","25","30","35"],"30"]
   ]
 };
-let score=0;
+let score=Number(localStorage.getItem("reta2Score"))||0;
 let lives=3;
 let streak=0;
 let current=0;
@@ -381,7 +381,7 @@ function shuffle(arr){
 
 function startGame(cat){
   category=cat;
-  score=0;
+
   lives=3;
   streak=0;
   current=0;
@@ -469,7 +469,7 @@ function chooseAnswer(button,selected,correct){
     const scoreBefore=score;
 
     score+=earned;
-
+localStorage.setItem("reta2Score",score);
     button.classList.add("correct");
 
     const crossedLifeGoal=
@@ -529,7 +529,7 @@ function updateStats(){
   document.getElementById("score").textContent=score;
   document.getElementById("pointsTop").textContent=score;
 }
-
+updateStats();
 function endGame(){
   clearInterval(timer);
 
