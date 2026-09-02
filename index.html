@@ -269,36 +269,98 @@ h2{
 
 <script>
 const questions = {
-  Mente:[
+  Mente: [
     ["¿Cuánto es 12 × 6?",["62","72","82","68"],"72"],
     ["¿Cuánto es 9 × 8?",["81","72","64","69"],"72"],
     ["¿Qué número sigue? 2, 4, 8, 16...",["20","24","32","30"],"32"],
     ["¿Cuánto es 144 ÷ 12?",["10","11","12","14"],"12"],
-    ["Si tenés 3 docenas, ¿cuántos hay?",["24","30","36","42"],"36"]
+    ["Si tenés 3 docenas, ¿cuántos hay?",["24","30","36","40"],"36"],
+    ["¿Cuánto es 15 + 27?",["40","42","44","46"],"42"],
+    ["¿Cuánto es 100 ÷ 4?",["20","25","30","40"],"25"],
+    ["¿Qué número sigue? 5, 10, 15, 20...",["22","24","25","30"],"25"],
+    ["¿Cuánto es 7 × 7?",["42","47","49","56"],"49"],
+    ["¿Cuánto es 81 ÷ 9?",["7","8","9","10"],"9"],
+    ["¿Cuál es la mitad de 150?",["50","65","75","80"],"75"],
+    ["¿Cuánto es 13 × 4?",["48","50","52","56"],"52"],
+    ["Si tengo 20 y gasto 7, ¿cuánto queda?",["11","12","13","14"],"13"],
+    ["¿Cuánto es 11 × 11?",["111","121","131","141"],"121"],
+    ["¿Qué número sigue? 3, 6, 9, 12...",["13","14","15","16"],"15"],
+    ["¿Cuánto es 200 - 75?",["115","120","125","135"],"125"],
+    ["¿Cuál es el doble de 48?",["86","92","96","98"],"96"],
+    ["¿Cuánto es 64 ÷ 8?",["6","7","8","9"],"8"],
+    ["¿Cuánto es 25 × 4?",["75","90","100","125"],"100"],
+    ["¿Cuál es la mitad de 90?",["40","45","50","55"],"45"]
   ],
-  Divertidos:[
-    ["¿Qué pesa más?",["1 kg de hierro","1 kg de algodón","El hierro","Depende"],"1 kg de hierro"],
+
+  Divertidos: [
     ["¿Qué animal dice 'miau'?",["Perro","Gato","Vaca","Pato"],"Gato"],
-    ["¿Cuál tiene agujas pero no cose?",["Reloj","Mesa","Vaso","Zapato"],"Reloj"],
-    ["¿Qué mes tiene 28 días?",["Febrero","Todos","Enero","Ninguno"],"Todos"],
-    ["¿Qué sube pero nunca baja?",["La edad","La lluvia","Un ascensor","El sol"],"La edad"]
+    ["¿Cuál tiene agujas pero no cose?",["Reloj","Mesa","Zapato","Libro"],"Reloj"],
+    ["¿Qué mes tiene 28 días?",["Febrero","Junio","Todos","Enero"],"Todos"],
+    ["¿Qué sube pero nunca baja?",["Ascensor","La edad","Pelota","Avión"],"La edad"],
+    ["¿Qué tiene dientes pero no come?",["Peine","Perro","Tiburón","León"],"Peine"],
+    ["¿Qué tiene cuello pero no cabeza?",["Botella","Gato","Camisa","Árbol"],"Botella"],
+    ["¿Qué tiene patas pero no camina?",["Mesa","Perro","Gato","Caballo"],"Mesa"],
+    ["¿Qué se moja mientras seca?",["Toalla","Agua","Sol","Fuego"],"Toalla"],
+    ["¿Qué tiene hojas pero no es árbol?",["Libro","Pasto","Flor","Rama"],"Libro"],
+    ["¿Qué podés atrapar pero no lanzar?",["Pelota","Resfrío","Piedra","Moneda"],"Resfrío"],
+    ["¿Qué tiene ciudades pero no casas?",["Mapa","País","Barrio","Calle"],"Mapa"],
+    ["¿Qué tiene teclas pero no abre puertas?",["Piano","Llave","Candado","Auto"],"Piano"],
+    ["¿Qué corre pero no tiene piernas?",["Agua","Perro","Persona","Caballo"],"Agua"],
+    ["¿Qué tiene un ojo pero no puede ver?",["Aguja","Pirata","Gato","Cámara"],"Aguja"],
+    ["¿Qué tiene corona pero no es rey?",["Piña","Príncipe","Caballo","Sombrero"],"Piña"],
+    ["¿Qué aparece una vez en minuto y dos en momento?",["La M","La O","La N","La T"],"La M"],
+    ["¿Qué podés romper sin tocar?",["Promesa","Vidrio","Plato","Vaso"],"Promesa"],
+    ["¿Qué tiene cuatro ruedas y vuela?",["Camión de basura","Avión","Bicicleta","Tren"],"Camión de basura"],
+    ["¿Qué cuanto más sacás, más grande queda?",["Un agujero","Una caja","Una botella","Una piedra"],"Un agujero"],
+    ["¿Qué va alrededor del mundo y queda en una esquina?",["Estampilla","Avión","Barco","Sol"],"Estampilla"]
   ],
-  Rápidos:[
+
+  Rápidos: [
     ["5 + 7 = ?",["10","11","12","13"],"12"],
     ["10 × 3 = ?",["20","30","40","33"],"30"],
     ["100 - 25 = ?",["65","70","75","85"],"75"],
     ["8 + 9 = ?",["16","17","18","19"],"17"],
-    ["6 × 7 = ?",["36","40","42","48"],"42"]
+    ["6 × 7 = ?",["36","40","42","48"],"42"],
+    ["20 ÷ 4 = ?",["4","5","6","8"],"5"],
+    ["9 + 6 = ?",["13","14","15","16"],"15"],
+    ["50 - 18 = ?",["30","32","34","38"],"32"],
+    ["8 × 5 = ?",["35","40","45","50"],"40"],
+    ["36 ÷ 6 = ?",["4","5","6","7"],"6"],
+    ["14 + 19 = ?",["31","32","33","34"],"33"],
+    ["7 × 8 = ?",["48","54","56","64"],"56"],
+    ["90 - 40 = ?",["40","45","50","60"],"50"],
+    ["12 × 3 = ?",["30","33","36","39"],"36"],
+    ["45 ÷ 5 = ?",["7","8","9","10"],"9"],
+    ["17 + 8 = ?",["23","24","25","26"],"25"],
+    ["11 × 5 = ?",["45","50","55","60"],"55"],
+    ["72 ÷ 8 = ?",["7","8","9","10"],"9"],
+    ["60 - 17 = ?",["41","42","43","44"],"43"],
+    ["9 × 9 = ?",["72","79","81","89"],"81"]
   ],
-  Difíciles:[
+
+  Difíciles: [
     ["15 × 12 = ?",["160","170","180","190"],"180"],
     ["225 ÷ 15 = ?",["10","12","15","20"],"15"],
     ["17 × 6 = ?",["92","102","112","96"],"102"],
     ["¿Raíz cuadrada de 169?",["11","12","13","14"],"13"],
-    ["25 × 16 = ?",["350","375","400","425"],"400"]
+    ["25 × 16 = ?",["350","375","400","425"],"400"],
+    ["19 × 7 = ?",["123","133","143","153"],"133"],
+    ["324 ÷ 18 = ?",["16","17","18","19"],"18"],
+    ["¿Raíz cuadrada de 225?",["13","14","15","16"],"15"],
+    ["32 × 12 = ?",["364","374","384","394"],"384"],
+    ["1000 ÷ 25 = ?",["25","30","40","50"],"40"],
+    ["¿Cuánto es 18²?",["314","324","334","344"],"324"],
+    ["27 × 14 = ?",["368","378","388","398"],"378"],
+    ["625 ÷ 25 = ?",["15","20","25","30"],"25"],
+    ["¿Raíz cuadrada de 196?",["12","13","14","15"],"14"],
+    ["125 × 4 = ?",["400","450","500","550"],"500"],
+    ["21 × 13 = ?",["253","263","273","283"],"273"],
+    ["840 ÷ 20 = ?",["40","42","44","46"],"42"],
+    ["¿Cuánto es 16²?",["236","246","256","266"],"256"],
+    ["48 × 5 = ?",["220","230","240","250"],"240"],
+    ["900 ÷ 30 = ?",["20","25","30","35"],"30"]
   ]
 };
-
 let score=0;
 let lives=3;
 let streak=0;
@@ -401,18 +463,40 @@ function chooseAnswer(button,selected,correct){
 
   if(selected===correct){
     streak++;
+
     const bonus=Math.min(streak*2,10);
-    score+=10+bonus+timeLeft;
+    const earned=10+bonus+timeLeft;
+    const scoreBefore=score;
+
+    score+=earned;
+
     button.classList.add("correct");
-    document.getElementById("feedback").textContent="🔥 ¡Correcto! +"+(10+bonus+timeLeft);
+
+    const crossedLifeGoal=
+      Math.floor(score/100)>Math.floor(scoreBefore/100);
+
+    if(crossedLifeGoal && lives<5){
+      lives++;
+      document.getElementById("feedback").textContent=
+        "❤️ ¡VIDA EXTRA! +"+earned+" pts";
+    }else{
+      document.getElementById("feedback").textContent=
+        "🔥 ¡Correcto! +"+earned+" pts";
+    }
+
   }else{
     lives--;
     streak=0;
+
     button.classList.add("wrong");
-    document.getElementById("feedback").textContent="❤️ Perdiste una vida";
+
+    document.getElementById("feedback").textContent=
+      "💔 Perdiste una vida";
 
     [...document.querySelectorAll(".answer")].forEach(b=>{
-      if(b.textContent===correct)b.classList.add("correct");
+      if(b.textContent===correct){
+        b.classList.add("correct");
+      }
     });
   }
 
