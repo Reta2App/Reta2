@@ -146,6 +146,38 @@ h2{
   background:#ffd23f;
   transition:width 1s linear;
 }
+  .rankBox{
+  margin:12px 0 20px;
+  text-align:center;
+}
+
+#rankName{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.rankBar{
+  height:12px;
+  background:#ffffff18;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+#rankProgress{
+  height:100%;
+  width:0%;
+  background:#ffd23f;
+  border-radius:20px;
+  transition:width .4s ease;
+}
+
+#rankText{
+  display:block;
+  margin-top:7px;
+  color:#ccc;
+  font-size:14px;
+}
 .question{
   text-align:center;
   font-size:30px;
@@ -248,7 +280,13 @@ h2{
       <div class="pill">🔥 <span id="streak">0</span></div>
       <div class="pill">⭐ <span id="score">0</span></div>
     </div>
-
+<div class="rankBox">
+  <div id="rankName">🥉 NOVATO</div>
+  <div class="rankBar">
+    <div id="rankProgress"></div>
+  </div>
+  <small id="rankText">0 / 100 pts para COMPETIDOR</small>
+</div>
     <div class="timer">⏱️ <span id="time">15</span>s</div>
     <div class="bar"><div id="timeBar"></div></div>
 
@@ -271,7 +309,7 @@ h2{
     <button class="primary share" onclick="shareResult()">📤 COMPARTIR RESULTADO</button>
   </section>
 
-  <div class="footer">Reta2 · Prototipo V8</div>
+  <div class="footer">Reta2 · Prototipo V9</div>
 </div>
 
 <script>
@@ -536,6 +574,47 @@ function updateStats(){
   document.getElementById("streak").textContent=streak;
   document.getElementById("score").textContent=score;
   document.getElementById("pointsTop").textContent=score;
+  updateRank();
+}
+  function updateRank(){
+  let name="🥉 NOVATO";
+  let min=0;
+  let max=100;
+  let next="COMPETIDOR";
+
+  if(score>=500){
+    name="👑 LEYENDA RETA2";
+    min=500;
+    max=500;
+    next="";
+  }else if(score>=300){
+    name="💎 MAESTRO";
+    min=300;
+    max=500;
+    next="LEYENDA RETA2";
+  }else if(score>=200){
+    name="🥇 EXPERTO";
+    min=200;
+    max=300;
+    next="MAESTRO";
+  }else if(score>=100){
+    name="🥈 COMPETIDOR";
+    min=100;
+    max=200;
+    next="EXPERTO";
+  }
+
+  document.getElementById("rankName").textContent=name;
+
+  if(score>=500){
+    document.getElementById("rankProgress").style.width="100%";
+    document.getElementById("rankText").textContent="👑 RANGO MÁXIMO";
+  }else{
+    const progress=((score-min)/(max-min))*100;
+    document.getElementById("rankProgress").style.width=progress+"%";
+    document.getElementById("rankText").textContent=
+      score+" / "+max+" pts para "+next;
+  }
 }
 updateStats();
 function endGame(){
