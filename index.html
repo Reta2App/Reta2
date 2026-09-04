@@ -271,7 +271,7 @@ h2{
     <button class="primary share" onclick="shareResult()">📤 COMPARTIR RESULTADO</button>
   </section>
 
-  <div class="footer">Reta2 · Prototipo V7</div>
+  <div class="footer">Reta2 · Prototipo V8</div>
 </div>
 
 <script>
@@ -388,7 +388,8 @@ function shuffle(arr){
 
 function startGame(cat){
   category=cat;
-
+score=Number(localStorage.getItem("reta2Score"))||0;
+  
   lives=3;
   streak=0;
   current=0;
@@ -562,6 +563,7 @@ function endGame(){
   document.getElementById("recordTop").textContent=record;
 
   window.scrollTo({top:0,behavior:"smooth"});
+  localStorage.removeItem("reta2Score");
 }
 
 function goHome(){
